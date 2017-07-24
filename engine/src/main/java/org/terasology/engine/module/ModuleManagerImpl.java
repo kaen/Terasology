@@ -114,7 +114,7 @@ public class ModuleManagerImpl implements ModuleManager {
                     if (!url.getProtocol().equalsIgnoreCase("jar")) {
                         continue;
                     }
-                    Reader reader = new InputStreamReader(url.openStream());
+                    Reader reader = new InputStreamReader(url.openStream(), TerasologyConstants.CHARSET);
                     String displayName = metadataReader.read(reader).getDisplayName().toString();
                     logger.info("Loading module {} from class path at {}", displayName, url.getFile());
 
